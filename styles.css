@@ -1,0 +1,365 @@
+/** HOME PAGE STARS ********/
+
+:root {
+  --color-primary: #000000;
+  --color-secondary: maroon;
+  --color-white: #ffffff;
+  --color-gray: #c3c3c3;
+}
+* {
+  margin: 0;
+  font-family: "Arimo", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+.container {
+  padding: 0 8% 0;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header" "main" "footer";
+}
+
+header {
+  grid-area: header;
+  position: sticky;
+  top: 0;
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+header h1 {
+  letter-spacing: -2px;
+  font-weight: bold;
+  font-size: clamp(1rem, 2vw + 1rem, 2rem);
+  color: var(--color-white);
+  padding: 16px 0;
+}
+header ul {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0;
+  list-style-type: none;
+}
+header ul li {
+  flex: 1;
+  padding: 0 16px;
+  min-width: fit-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--color-white);
+}
+
+header ul li a {
+  font-size: calc(0.7rem + 0.8vw);
+  text-decoration: none;
+  color: inherit;
+}
+header ul li:hover,
+header ul li a:hover {
+  background: var(--color-white);
+  color: var(--color-primary);
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+footer .footer-container {
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  opacity: 0.7;
+  gap: 100px;
+}
+footer .footer-container > div {
+  flex: 1;
+}
+footer .footer-container > div ul {
+  list-style: none;
+  padding: 0;
+}
+footer .footer-container > div ul li {
+  padding: 3px 0;
+}
+
+footer .footer-container h1 {
+  font-size: calc(1.5rem + 2.75vw);
+  font-weight: bold;
+  letter-spacing: -7px;
+}
+footer .social-links {
+  display: flex;
+  gap: 20px;
+  align-items: end;
+
+  margin: auto auto 0;
+}
+footer .social-links a {
+  font-size: calc(1rem + 1vw);
+  color: var(--color-white);
+  text-decoration: none;
+}
+footer .footer-container h3 {
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+footer > p {
+  text-align: center;
+  padding: 50px;
+  opacity: 0.5;
+}
+footer a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.home-banner {
+  height: 92vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+    url("./images/home-image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: end;
+  gap: 20px;
+}
+
+.home .home-banner > div {
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+  color: var(--color-white);
+  text-align: center;
+  padding: calc(0.5rem + 0.5vw) 0 calc(0.5rem + 1.5vw);
+}
+.home .home-banner h1 {
+  font-size: calc(2rem + 4.5vw);
+  font-weight: 900;
+  letter-spacing: -7px;
+  opacity: 0.9;
+}
+.home .home-banner p {
+  color: var(--color-gray);
+  font-size: calc(0.5rem + 0.85vw);
+  letter-spacing: -1px;
+  padding-bottom: calc(0.5rem + 0.5vw);
+}
+.line {
+  width: 60px;
+  border-top: 5px solid var(--color-white);
+  margin: auto;
+}
+
+.home section {
+  padding: 60px 0;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+.home section a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.home section h2 {
+  text-align: center;
+  margin: 0;
+  font-size: calc(0.75rem + 1vw);
+  letter-spacing: 0px;
+  opacity: 0.7;
+  font-weight: bold;
+  grid-column: span 3;
+}
+
+.home section .card {
+  flex: 1;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+
+.home section .card-img {
+  width: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: var(--color-primary);
+}
+
+.home section .card-img img {
+  /* TRANSITION */
+  transition: 300ms ease-in-out;
+  height: auto;
+  min-width: 218px;
+  max-height: 270px;
+  opacity: 0.8;
+  z-index: 2;
+}
+.home section .card:hover .card-img img {
+  /* TRANSFORMATION */
+  transform: scale(1.1);
+  opacity: 1;
+}
+.home .featured-vehicles .sale {
+  position: absolute;
+  right: -34px;
+  top: -9px;
+  z-index: 1;
+  height: 40px;
+  width: auto;
+  animation: sale 2s infinite;
+}
+
+@keyframes sale {
+  0% {
+    transform: rotate(-25deg);
+    /* transform: scale(0); */
+  }
+  50% {
+    transform: rotate(-55deg);
+    transform-origin: 25% 37%;
+  }
+  100% {
+    transform: rotate(-25deg);
+  }
+}
+
+.home .testimonials .card {
+  display: flex;
+  flex-direction: row;
+  box-shadow: none;
+  border-right: 2px solid #b6bfc1;
+}
+.home .testimonials .card .card-img {
+  /* 
+  #6b8dbd 
+  #b6bfc1 
+  #a06c5a  
+  */
+  background-color: #b6bfc1;
+  border-radius: inherit;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  max-width: 150px;
+}
+
+.home .testimonials .card .card-img img {
+  opacity: 1;
+  height: 100%;
+  margin-left: -25px;
+}
+.home .testimonials .card:hover .card-img {
+  /* background-color: black; */
+}
+.home .testimonials .card:hover .card-img img {
+  transform: scale(1);
+}
+
+.home section .card-desc {
+  padding: calc(0.5rem + 0.5vw);
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.home section .card-desc p strong {
+  font-size: calc(0.7rem + 1vw);
+  padding: 10px;
+  color: var(--color-primary);
+}
+.home section .card-desc p {
+  font-weight: bold;
+  opacity: 0.7;
+  font-size: calc(1rem + 1vw);
+}
+
+.home section .card-img img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: auto;
+}
+.home section .card-desc .review {
+  font-size: calc(0.75rem + 0.5vw);
+  opacity: 0.6;
+  font-weight: 500;
+}
+.home section .card-desc .review-user {
+  font-size: calc(0.75rem + 0.5vw);
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  footer .footer-container {
+    gap: 30px;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+  header h1 {
+    padding: 8px 0 0;
+  }
+  header ul {
+    padding: 8px;
+  }
+  .home .home-banner {
+    height: 50vh;
+    background-attachment: scroll;
+  }
+  .home .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+  .home .footer-container h1 {
+    letter-spacing: -3px;
+  }
+  .home .testimonials .card-desc {
+    justify-content: center;
+  }
+  .home .social-links {
+    justify-content: center;
+  }
+  .container {
+    padding: 0 16px;
+  }
+  .home section {
+    flex-direction: column;
+    grid-template-columns: minmax(auto, 350px);
+    justify-content: center;
+  }
+  .home section h2 {
+    grid-column: unset;
+  }
+}
+@media (min-width: 768px) {
+  .home section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/** HOME PAGE ENDS ************/
